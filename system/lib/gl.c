@@ -1825,6 +1825,18 @@ void* emscripten_GetProcAddress(const char *name_) {
   if (!strcmp(name, "glClearBufferuiv")) return emscripten_glClearBufferuiv;
   if (!strcmp(name, "glClearBufferfv")) return emscripten_glClearBufferfv;
   if (!strcmp(name, "glClearBufferfi")) return emscripten_glClearBufferfi;
+  // deprecated direct mode functions 
+  if (!strcmp(name, "glOrtho")) return emscripten_glOrtho;
+  if (!strcmp(name, "glFrustum")) return emscripten_glFrustum;
+  if (!strcmp(name, "glPushMatrix")) return emscripten_glPushMatrix;
+  if (!strcmp(name, "glPopMatrix")) return emscripten_glPopMatrix;
+  if (!strcmp(name, "glVertex3f")) return emscripten_glVertex3f;
+  if (!strcmp(name, "glTexCoord2f")) return emscripten_glTexCoord2f;
+  if (!strcmp(name, "glGetTexLevelParameteriv")) return emscripten_glGetTexLevelParameteriv;
+  if (!strcmp(name, "glDisableClientState")) return emscripten_glDisableClientState;
+  if (!strcmp(name, "glBegin")) return emscripten_glBegin;
+  if (!strcmp(name, "glEnd")) return emscripten_glEnd;
+
   return 0;
 }
 
